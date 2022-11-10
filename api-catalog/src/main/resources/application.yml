@@ -3,3 +3,5 @@ server:
 spring:
   application:
     name: api-catalog
+  config:
+    import: optional:configserver:http://localhost:8088

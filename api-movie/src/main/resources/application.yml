@@ -12,3 +12,5 @@ spring:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
+  config:
+    import: optional:configserver:http://localhost:8089
