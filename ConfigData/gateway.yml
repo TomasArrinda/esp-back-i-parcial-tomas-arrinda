@@ -15,9 +15,9 @@ spring:
           predicates:
             - Path=/movies/**
         - id: mscatalog
-            uri: lb://api-catalog
-            predicates:
-              - Path=/catalog/**
+          uri: lb://api-catalog
+          predicates:
+            - Path=/catalog/**
 
 info:
   app:
