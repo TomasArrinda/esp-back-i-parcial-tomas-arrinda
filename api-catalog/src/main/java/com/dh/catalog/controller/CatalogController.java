@@ -12,16 +12,13 @@ import java.util.List;
 @RestController
 @RequestMapping("/catalog")
 public class CatalogController {
-
 	private final MovieServiceClient movieServiceClient;
 
 	public CatalogController(MovieServiceClient movieServiceClient) {
 		this.movieServiceClient = movieServiceClient;
 	}
-
 	@GetMapping("/{genre}")
 	ResponseEntity<List<MovieServiceClient.MovieDto>> getGenre(@PathVariable String genre) {
 		return ResponseEntity.ok(movieServiceClient.getMovieByGenre(genre));
 	}
-
 }

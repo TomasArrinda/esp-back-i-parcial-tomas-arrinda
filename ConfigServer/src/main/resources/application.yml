@@ -10,3 +10,4 @@ spring:
           uri: https://github.com/TomasArrinda/esp-back-i-parcial-tomas-arrinda
           search-paths: esp-back-i-parcial-tomas-arrinda/ConfigData/
           default-label: master
+          force-pull: true
