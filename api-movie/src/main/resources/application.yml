@@ -1,16 +1,20 @@
 server:
-  port: ${PORT:${SERVER_PORT:0}}
+  port: 8082
 spring:
   application:
     name: api-movie
   datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/movie-dev
-    username: usr-movie
-    password: pwd-movie
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/parcial
+    username: root
+    password: root
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
+    properties:
+      hibernate:
+        format-sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
   config:
-    import: optional:configserver:http://localhost:8089
+    import: optional:configserver:http://localhost:8888

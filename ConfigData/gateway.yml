@@ -10,7 +10,7 @@ spring:
         locator:
           enabled: true
       routes:
-        - id: msmovies
+        - id: msmovie
           uri: lb://api-movie
           predicates:
             - Path=/movies/**
