@@ -5,3 +5,7 @@ spring:
     config:
       enabled: true
       uri: http://localhost:8888
+eureka:
+  client:
+    fetchRegistry: false
+    registerWithEureka: false
