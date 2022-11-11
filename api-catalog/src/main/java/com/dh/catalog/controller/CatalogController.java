@@ -1,8 +1,6 @@
 package com.dh.catalog.controller;
 
 import com.dh.catalog.client.MovieServiceClient;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -24,4 +22,3 @@ public class CatalogController {
 		return ResponseEntity.ok(movieServiceClient.getMovieByGenre(genre));
 	}
 }
-

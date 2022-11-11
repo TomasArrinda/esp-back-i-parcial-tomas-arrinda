@@ -13,3 +13,11 @@ eureka:
   client:
     fetchRegistry: false
     registerWithEureka: false
+logging:
+  level:
+    reactor:
+      netty: INFO
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE

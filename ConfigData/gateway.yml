@@ -9,12 +9,13 @@ spring:
       discovery:
         locator:
           enabled: true
+          lower-case-service-id: true
       routes:
-        - id: msmovie
+        - id: ms-movie
           uri: lb://api-movie
           predicates:
             - Path=/movies/**
-        - id: mscatalog
+        - id: ms-catalog
           uri: lb://api-catalog
           predicates:
             - Path=/catalog/**
