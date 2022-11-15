@@ -21,7 +21,6 @@ spring:
       server:
         git:
           url: https://github.com/TomasArrinda/esp-back-i-parcial-tomas-arrinda
-
 eureka:
   client:
     registerWithEureka: true
