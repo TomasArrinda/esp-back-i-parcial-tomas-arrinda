@@ -3,11 +3,6 @@ server:
 spring:
   application:
     name: api-catalog
-  datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/parcial
-    username: root
-    password: root
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
