@@ -1,6 +1,7 @@
 package com.dh.apiserie.event;
 
 import com.dh.apiserie.config.RabbitMQConfig;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.slf4j.Logger;
@@ -23,15 +24,10 @@ public class SerieLogging {
         rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME, RabbitMQConfig.ROUTING_KEY_LOG_COURSE, data);
     }
 
-    @RabbitListener(queues = RabbitMQConfig.QUEUE_COURSE)
-    public void receiveMessage(final SerieLoggingData message) {
-        log.info("Received message as generic AMQP 'Message' wrapper: {}", message.operationId);
-    }
-
     @Getter
     @Setter
+    @AllArgsConstructor
     public static class SerieLoggingData {
-        private long studentId;
         private String operationId;
     }
 }
