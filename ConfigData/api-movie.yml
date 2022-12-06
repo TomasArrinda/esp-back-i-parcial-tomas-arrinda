@@ -21,6 +21,11 @@ spring:
       server:
         git:
           url: https://github.com/TomasArrinda/esp-back-i-parcial-tomas-arrinda
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
 eureka:
   client:
     registerWithEureka: true
