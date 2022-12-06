@@ -1,6 +1,5 @@
 package com.dh.apiserie.controller;
 
-import com.dh.apiserie.model.Season;
 import com.dh.apiserie.model.Series;
 import com.dh.apiserie.repository.ChapterRepository;
 import com.dh.apiserie.repository.SeasonRepository;

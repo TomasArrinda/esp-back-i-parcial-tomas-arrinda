@@ -2,7 +2,6 @@ package com.dh.apiserie.model;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.apache.catalina.LifecycleState;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
