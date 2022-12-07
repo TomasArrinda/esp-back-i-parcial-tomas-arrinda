@@ -1,6 +1,6 @@
-package com.dh.apiserie.event;
+package com.dh.movie.event;
 
-import com.dh.apiserie.config.RabbitMQConfig;
+import com.dh.movie.config.RabbitMQConfig;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

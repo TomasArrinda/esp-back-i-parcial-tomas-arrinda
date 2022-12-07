@@ -26,7 +26,6 @@ public class SeriesController {
     }
     @PostMapping
     public ResponseEntity<Series> addSerie(Series o) {
-        serieRepository.save(o);
         String id = UUID.randomUUID().toString();
         serieLogging.sendMessage(new SerieLogging.SerieLoggingData(id));
         return ResponseEntity.ok().body(serieRepository.save(o));
