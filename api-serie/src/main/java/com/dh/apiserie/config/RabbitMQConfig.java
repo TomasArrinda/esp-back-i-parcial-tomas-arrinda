@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
     public static final String EXCHANGE_NAME = "digitalHouseExchange";
-    public static final String QUEUE_COURSE = "courseLoggingQueue";
+    public static final String QUEUE_COURSE = "serieQueue";
     public static final String ROUTING_KEY_LOG_COURSE = "com.digitalhouse.logging";
 
     @Bean

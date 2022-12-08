@@ -6,7 +6,12 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+import com.dh.movie.model.Movie;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
 @Repository
-public interface MovieRepository extends JpaRepository<Movie, Long> {
+public interface MovieRepositoryMongo extends MongoRepository<Movie,Long> {
     List<Movie> findByGenre(String genre);
+    List<Movie> findAll();
 }

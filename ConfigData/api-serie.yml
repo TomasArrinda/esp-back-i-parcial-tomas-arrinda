@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: api-serie
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/parcial
+    username: root
+    password: root
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
@@ -11,6 +16,13 @@ spring:
       hibernate:
         format-sql: true
         dialect: org.hibernate.dialect.MySQL8Dialect
+      host: localhost
+  data:
+    mongodb:
+      username: usrspotifymongo
+      password: pwdspotifymongo
+      database: spotifydevmongo
+      port: 27017
   cloud:
     config:
       server:
@@ -21,9 +33,46 @@ spring:
     password: guest
     host: localhost
     port: 5672
+  sleuth:
+    sampler:
+      probability: 1.0
+    rabbitmq:
+      addresses: localhost:5672
+      virtual-host: app_vhost
+      username: guest
+      password: guest
+    zipkin:
+      baseUrl: http://localhost:9411/
+      sender:
+        type: rabbit
+      enabled: true
+queue:
+  serie:
+    name: serieQueue
 eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
     serviceURL:
       defaultZone: http://localhost:8761/eureka
+resilience4j.retry:
+  instances:
+    retryMusic:
+      maxAttempts: 3
+      waitDuration: 10s
+      enableExponentialBackoff: true
+      exponentialBackoffMultiplier: 2
+      retryExceptions:
+        - org.springframework.web.client.HttpServerErrorException
+        - java.io.IOException
+resilience4j.circuitbreaker:
+  instances:
+    clientMusic:
+      registerHealthIndicator: true
+      slidingWindowSize: 10
+      permittedNumberOfCallsInHalfOpenState: 3
+      slidingWindowType: TIME_BASED
+      minimumNumberOfCalls: 20
+      waitDurationInOpenState: 50s
+      failureRateThreshold: 50
+      eventConsumerBufferSize: 10
