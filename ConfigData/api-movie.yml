@@ -18,9 +18,9 @@ spring:
         dialect: org.hibernate.dialect.MySQL8Dialect
   data:
     mongodb:
-      username: usrspotifymongo
-      password: pwdspotifymongo
-      database: spotifydevmongo
+      username: Tomas
+      password: TestTest
+      database: db
       port: 27017
       host: localhost
   cloud:
