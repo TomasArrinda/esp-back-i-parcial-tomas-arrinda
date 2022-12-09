@@ -2,6 +2,7 @@ package com.dh.apiserie.model;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,7 +12,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@Document
 public class Season {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

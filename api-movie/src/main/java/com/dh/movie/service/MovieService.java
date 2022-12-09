@@ -2,6 +2,7 @@ package com.dh.movie.service;
 
 import com.dh.movie.model.Movie;
 import com.dh.movie.repository.MovieRepositoryMongo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
