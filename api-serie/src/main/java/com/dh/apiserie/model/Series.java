@@ -3,8 +3,6 @@ package com.dh.apiserie.model;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,7 +12,7 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Document
+@Document(collection = "Series")
 public class Series implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
@@ -25,4 +23,27 @@ public class Series implements Serializable {
     private String name;
     private String genre;
     private List<Season> seasons;
+
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Document
+    public class Season {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+        private int seasonNumber;
+        private List<Chapter> chapters;
+    }
+
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Document
+    public class Chapter {
+        @Id
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        private Long id;
+        private String name;
+        private int number;
+        private String urlStream;
+    }
 }

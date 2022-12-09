@@ -2,8 +2,6 @@ package com.dh.apiserie.controller;
 
 import com.dh.apiserie.event.SerieLogging;
 import com.dh.apiserie.model.Series;
-import com.dh.apiserie.repository.ChapterRepositoryMongo;
-import com.dh.apiserie.repository.SeasonRepositoryMongo;
 import com.dh.apiserie.repository.SerieRepositoryMongo;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,14 +13,10 @@ import java.util.UUID;
 @RequestMapping("/serie")
 public class SeriesController {
     private final SerieRepositoryMongo serieRepositoryMongo;
-    private final SeasonRepositoryMongo seasonRepositoryMongo;
-    private final ChapterRepositoryMongo chapterRepositoryMongo;
     private SerieLogging serieLogging;
 
-    public SeriesController(SerieRepositoryMongo sr, SeasonRepositoryMongo ss, ChapterRepositoryMongo c) {
+    public SeriesController(SerieRepositoryMongo sr) {
         this.serieRepositoryMongo = sr;
-        this.seasonRepositoryMongo = ss;
-        this.chapterRepositoryMongo = c;
     }
     @PostMapping
     public ResponseEntity<Series> addSerie(Series o) {
