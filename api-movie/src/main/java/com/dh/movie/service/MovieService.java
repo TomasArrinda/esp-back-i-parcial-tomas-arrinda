@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class MovieService {
+    @Autowired
     private final MovieRepositoryMongo movieRepositoryMongo;
 
     public MovieService(MovieRepositoryMongo movieRepositoryMongo) {
