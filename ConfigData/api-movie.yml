@@ -3,19 +3,19 @@ server:
 spring:
   application:
     name: api-movie
-  datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/parcial
-    username: root
-    password: root
-  jpa:
-    hibernate.ddl-auto: update
-    generate-ddl: true
-    show-sql: true
-    properties:
-      hibernate:
-        format-sql: true
-        dialect: org.hibernate.dialect.MySQL8Dialect
+#  datasource:
+#    driverClassName: com.mysql.jdbc.Driver
+#    url: mongodb+srv://Tomas:TestTest@cluster0.hmkrq1v.mongodb.net/test
+#    username: root
+#    password: root
+#  jpa:
+#    hibernate.ddl-auto: update
+#    generate-ddl: true
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format-sql: true
+#        dialect: org.hibernate.dialect.MySQL8Dialect
   data:
     mongodb:
       username: Tomas
