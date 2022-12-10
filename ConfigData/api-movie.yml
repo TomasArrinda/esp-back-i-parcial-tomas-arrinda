@@ -3,9 +3,9 @@ server:
 spring:
   application:
     name: api-movie
-#  datasource:
-#    driverClassName: com.mysql.jdbc.Driver
-#    url: mongodb+srv://Tomas:TestTest@cluster0.hmkrq1v.mongodb.net/test
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: mongodb+srv://Tomas:TestTest@cluster0.hmkrq1v.mongodb.net/test
 #    username: root
 #    password: root
 #  jpa:
