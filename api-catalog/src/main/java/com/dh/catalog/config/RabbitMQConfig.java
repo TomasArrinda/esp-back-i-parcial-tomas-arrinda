@@ -1,4 +1,4 @@
-package com.dh.movie.config;
+package com.dh.catalog.config;
 
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -9,7 +9,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
     public static final String EXCHANGE_NAME = "digitalHouseExchange";
-    public static final String QUEUE_COURSE = "movieQueue";
+    public static final String QUEUE_COURSE_MOVIE = "movieQueue";
+    public static final String QUEUE_COURSE_SERIES = "seriesQueue";
     public static final String ROUTING_KEY_LOG_COURSE = "com.digitalhouse.logging";
 
     @Bean

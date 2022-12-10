@@ -1,11 +1,9 @@
 package com.dh.movie.controller;
 
-import com.dh.movie.event.SerieLogging;
 import com.dh.movie.model.Movie;
 import com.dh.movie.service.MovieService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.UUID;
 
@@ -13,7 +11,6 @@ import java.util.UUID;
 @RequestMapping("/movies")
 public class MovieController {
     private final MovieService movieService;
-    private SerieLogging serieLogging;
 
     public MovieController(MovieService movieService) {
         this.movieService = movieService;
@@ -25,7 +22,6 @@ public class MovieController {
     @PostMapping("/save")
     ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
         String id = UUID.randomUUID().toString();
-        serieLogging.sendMessage(new SerieLogging.SerieLoggingData(id));
         return ResponseEntity.ok().body(movieService.save(movie));
     }
 }
