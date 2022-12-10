@@ -23,6 +23,8 @@ spring:
       password: TestTest
       uri: mongodb+srv://Tomas:TestTest@cluster0.hmkrq1v.mongodb.net/test
       database: db
+      port: 27017
+      host: localhost
   cloud:
     config:
       server:
