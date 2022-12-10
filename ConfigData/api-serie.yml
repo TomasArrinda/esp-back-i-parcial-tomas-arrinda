@@ -3,26 +3,12 @@ server:
 spring:
   application:
     name: api-serie
-  datasource:
-    driverClassName: com.mysql.jdbc.Driver
-    url: mongodb+srv://Tomas:TestTest@cluster0.hmkrq1v.mongodb.net/test
-#    username: root
-#    password: root
-#  jpa:
-#    hibernate.ddl-auto: update
-#    generate-ddl: true
-#    show-sql: true
-#    properties:
-#      hibernate:
-#        format-sql: true
-#        dialect: org.hibernate.dialect.MySQL8Dialect
-#      host: localhost
+
   data:
     mongodb:
-      username: Tomas
-      password: TestTest
-      uri: mongodb+srv://Tomas:TestTest@cluster0.hmkrq1v.mongodb.net/test
-      database: db
+      username: usrspotifymongo
+      password: pwdspotifymongo
+      database: spotifydevmongo
       port: 27017
       host: localhost
   cloud:
