@@ -5,11 +5,12 @@ spring:
     name: api-movie
   data:
     mongodb:
-      username: usrspotifymongo
-      password: pwdspotifymongo
-      database: spotifydevmongo
-      port: 27017
-      host: localhost
+      mongodb:
+        username: Tomas
+        password: TestTest
+        database: test
+        port: 27017
+        host: cluster0.hmkrq1v.mongodb.net
   cloud:
     config:
       server:

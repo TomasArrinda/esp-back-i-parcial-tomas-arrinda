@@ -98,6 +98,7 @@
         </dependencies>
     </dependencyManagement>
     <build>
+        <finalName>dh-api-catalog</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

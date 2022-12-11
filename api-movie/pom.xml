@@ -118,6 +118,7 @@
     </dependencyManagement>
 
     <build>
+        <finalName>dh-api-movie</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
