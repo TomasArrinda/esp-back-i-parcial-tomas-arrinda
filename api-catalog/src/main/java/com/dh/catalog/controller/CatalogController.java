@@ -4,6 +4,9 @@ import com.dh.catalog.client.MovieServiceClient;
 import com.dh.catalog.client.SerieServiceClient;
 import com.dh.catalog.event.Logging;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -26,7 +29,6 @@ public class CatalogController {
 		this.serieServiceClient = serieServiceClient;
 	}
 	@GetMapping("/{genre}")
-	@RabbitListener
 	ResponseEntity<List> getGenre(@PathVariable String genre) {
 		String id = UUID.randomUUID().toString();
 		List list = movieServiceClient.getMovieByGenre(genre);

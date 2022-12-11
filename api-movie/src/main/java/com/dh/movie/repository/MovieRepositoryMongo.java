@@ -8,7 +8,6 @@ import java.util.List;
 
 @Repository
 public interface MovieRepositoryMongo extends MongoRepository<Movie,Long> {
-    List<Movie> findByGenre(String genre);
     @Query
-    List<Movie> findAll();
+    List<Movie> findByGenre(String genre);
 }

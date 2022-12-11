@@ -1,6 +1,6 @@
 spring:
   application:
-    name: api-movie
+    name: api-serie
   cloud:
     config:
       enabled: true

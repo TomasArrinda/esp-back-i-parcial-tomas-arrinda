@@ -21,7 +21,4 @@ public class MovieService {
     public Movie save(Movie movie) {
         return movieRepositoryMongo.insert(movie);
     }
-    public List<Movie> getAll() {
-        return movieRepositoryMongo.findAll();
-    }
 }
