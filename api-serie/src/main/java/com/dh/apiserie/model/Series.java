@@ -26,7 +26,7 @@ public class Series implements Serializable {
     @AllArgsConstructor
     @NoArgsConstructor
     @Document
-    public class Season {
+    public static class Season {
         @Id
         private String id;
         private int seasonNumber;
@@ -36,7 +36,7 @@ public class Series implements Serializable {
     @AllArgsConstructor
     @NoArgsConstructor
     @Document
-    public class Chapter {
+    public static class Chapter {
         @Id
         private String id;
         private String name;

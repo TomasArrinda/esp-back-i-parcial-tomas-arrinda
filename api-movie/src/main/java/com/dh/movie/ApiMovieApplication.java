@@ -18,16 +18,16 @@ public class ApiMovieApplication {
     public static void main(String[] args) {
         SpringApplication.run(ApiMovieApplication.class, args);
     }
-//    @Bean
-//    public CommandLineRunner loadData(MovieRepositoryMongo repository) {
-//        return (args) -> {
-//            if (!repository.findAll().isEmpty()) {
-//                return;
-//            }
-//            repository.save(new Movie(null, "Pelicula 1", "Terror", "www.netflix.com"));
-//            repository.save(new Movie(null, "Pelicula 2", "Terror", "www.netflix.com"));
-//            repository.save(new Movie(null, "Pelicula 3", "Comedia", "www.netflix.com"));
-//            repository.save(new Movie(null, "Pelicula 4", "Ficcion", "www.netflix.com"));
-//        };
-//    }
+    @Bean
+    public CommandLineRunner loadData(MovieRepositoryMongo repository) {
+        return (args) -> {
+            if (!repository.findAll().isEmpty()) {
+                return;
+            }
+            repository.save(new Movie(null, "Pelicula 1", "Terror", "www.netflix.com"));
+            repository.save(new Movie(null, "Pelicula 2", "Terror", "www.netflix.com"));
+            repository.save(new Movie(null, "Pelicula 3", "Comedia", "www.netflix.com"));
+            repository.save(new Movie(null, "Pelicula 4", "Ficcion", "www.netflix.com"));
+        };
+    }
 }
