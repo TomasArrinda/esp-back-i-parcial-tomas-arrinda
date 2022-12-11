@@ -27,13 +27,13 @@ public class NewSerie {
         this.serieRepositoryMongo = serieRepositoryMongo;
     }
     @RabbitListener(queues = RabbitMQConfig.TOPIC_NEW_SERIES)
-    public void execute(NewSerie.Data data) {
+    public void execute(Series data) {
         Series seriesNew = new Series();
-        BeanUtils.copyProperties(data.getSerie(),seriesNew);
-        if (data.getSerie().getSeriesId() != null && seriesNew.getSeasons() != null) {
-            BeanUtils.copyProperties(data.getSerie().getSeasons(),seriesNew.getSeasons());
+        BeanUtils.copyProperties(data,seriesNew);
+        if (data.getId() != null && seriesNew.getSeasons() != null) {
+            BeanUtils.copyProperties(data.getSeasons(),seriesNew.getSeasons());
         }
-        serieRepositoryMongo.deleteById(data.getSerie().getSeriesId());
+        serieRepositoryMongo.deleteById(Long.valueOf(data.getId()));
         serieRepositoryMongo.save(seriesNew);
     }
 

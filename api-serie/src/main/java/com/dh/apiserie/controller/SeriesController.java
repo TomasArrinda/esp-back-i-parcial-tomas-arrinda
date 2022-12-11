@@ -14,7 +14,7 @@ public class SeriesController {
     public SeriesController(SerieRepositoryMongo sr) {
         this.serieRepositoryMongo = sr;
     }
-    @PostMapping
+    @PostMapping("/save")
     public ResponseEntity<Series> addSerie(Series o) {
         return ResponseEntity.ok().body(serieRepositoryMongo.insert(o));
     }

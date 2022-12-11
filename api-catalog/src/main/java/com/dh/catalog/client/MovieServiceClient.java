@@ -7,10 +7,13 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import javax.persistence.Id;
 import java.io.Serial;
@@ -21,6 +24,8 @@ import java.util.List;
 public interface MovieServiceClient {
 	@GetMapping("/movies/{genre}")
 	List<MovieDto> getMovieByGenre(@PathVariable (value = "genre") String genre);
+	@PostMapping("/movies/save")
+	ResponseEntity<Movie> save(@RequestBody Movie movie);
 
 	@Getter
 	@Setter

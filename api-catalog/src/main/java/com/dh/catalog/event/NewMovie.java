@@ -22,10 +22,10 @@ public class NewMovie {
         this.movieRepositoryMongo = movieRepositoryMongo;
     }
     @RabbitListener(queues = RabbitMQConfig.TOPIC_NEW_MOVIE)
-    public void execute(NewMovie.Data data) {
+    public void execute(Movie data) {
         Movie movieNew = new Movie();
-        BeanUtils.copyProperties(data.getMovie(),movieNew);
-        movieRepositoryMongo.deleteById(data.getMovie().getId());
+        BeanUtils.copyProperties(data,movieNew);
+        movieRepositoryMongo.deleteById(Long.valueOf(data.getId()));
         movieRepositoryMongo.save(movieNew);
     }
 
@@ -34,13 +34,13 @@ public class NewMovie {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class Data implements Serializable {
-        private MovieDto movie =new MovieDto();
+        private Movie movie = new Movie();
 
         @Getter
         @Setter
         @NoArgsConstructor
         @AllArgsConstructor
-        class MovieDto{
+        class Movie{
             private Long id;
             private String name;
             private String genre;

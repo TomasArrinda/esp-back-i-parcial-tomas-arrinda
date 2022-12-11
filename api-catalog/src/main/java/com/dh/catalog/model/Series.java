@@ -15,6 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
+@Document(collection = "Series")
 public class Series implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;

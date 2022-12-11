@@ -21,7 +21,6 @@ public class MovieController {
     }
     @PostMapping("/save")
     ResponseEntity<Movie> saveMovie(@RequestBody Movie movie) {
-        String id = UUID.randomUUID().toString();
         return ResponseEntity.ok().body(movieService.save(movie));
     }
 }
