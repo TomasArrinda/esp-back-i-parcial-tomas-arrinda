@@ -12,13 +12,13 @@ import java.util.List;
 
 @FeignClient(name="api-serie")
 public interface SerieServiceClient {
-    @GetMapping("/series/{genre}")
+    @GetMapping("/serie/{genre}")
     List<SerieDto> getSeriesByGenre(@PathVariable (value = "genre") String genre);
 
     @Getter
     @Setter
     class SerieDto{
-        private Long id;
+        private String id;
         private String name;
         private String genre;
         private List<SeasonDto> seasons;
@@ -26,14 +26,14 @@ public interface SerieServiceClient {
     @Getter
     @Setter
     class SeasonDto {
-        private Long id;
+        private String id;
         private int seasonNumber;
         private List<ChapterDto> chapters;
     }
     @Getter
     @Setter
     class ChapterDto {
-        private Long id;
+        private String id;
         private String name;
         private int number;
         private String urlStream;

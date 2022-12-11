@@ -17,7 +17,6 @@ public class RabbitMQConfig {
     public static final String QUEUE_SERIES = "seriesQueue";
     public static final String TOPIC_NEW_SERIES = "seriesNewQueue";
     public static final String TOPIC_NEW_MOVIE = "movieNewQueue";
-    public static final String ROUTING_KEY_LOG_COURSE = "com.digitalhouse.logging";
 
     @Bean
     public TopicExchange appExchange() {
@@ -39,7 +38,6 @@ public class RabbitMQConfig {
     public Binding declareBindingNewSerie() {
         return BindingBuilder.bind(newSerieQueue()).to(appExchange()).with(TOPIC_NEW_SERIES);
     }
-
     @Bean
     public RabbitTemplate rabbitTemplate(final ConnectionFactory connectionFactory) {
         final var rabbitTemplate = new RabbitTemplate(connectionFactory);

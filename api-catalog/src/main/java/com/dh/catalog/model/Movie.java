@@ -1,10 +1,11 @@
-package com.dh.movie.model;
+package com.dh.catalog.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.Id;
 import java.io.Serial;
 import java.io.Serializable;
@@ -13,7 +14,6 @@ import java.io.Serializable;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "Movie")
 public class Movie implements Serializable {
     @Serial
     private static final long serialVersionUID = 1L;
