@@ -3,13 +3,13 @@ server:
 spring:
   application:
     name: api-movie
+  mongodb:
+    embedded:
+      version: 4.0.2
   data:
     mongodb:
-        username: Tomas
-        password: TestTest
-        database: test
-        port: 27017
-        host: cluster0.hmkrq1v.mongodb.net
+      database: test
+      port: 27017
   cloud:
     config:
       server:

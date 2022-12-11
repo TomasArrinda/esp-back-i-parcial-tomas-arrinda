@@ -18,8 +18,7 @@ public class Series implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
     private String name;
     private String genre;
     private List<Season> seasons;
@@ -29,8 +28,7 @@ public class Series implements Serializable {
     @Document
     public class Season {
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+        private String id;
         private int seasonNumber;
         private List<Chapter> chapters;
     }
@@ -40,8 +38,7 @@ public class Series implements Serializable {
     @Document
     public class Chapter {
         @Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private Long id;
+        private String id;
         private String name;
         private int number;
         private String urlStream;
