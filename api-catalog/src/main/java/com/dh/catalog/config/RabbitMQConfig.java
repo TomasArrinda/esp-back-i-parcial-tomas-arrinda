@@ -15,8 +15,6 @@ public class RabbitMQConfig {
     public static final String QUEUE_SERIES = "seriesQueue";
     public static final String TOPIC_NEW_SERIES = "com.dh.newSeries";
     public static final String TOPIC_NEW_MOVIE = "com.dh.newMovie";
-    @Autowired
-    private AmqpAdmin amqpAdmin;
 
     @Bean
     public TopicExchange appExchange() {
@@ -32,12 +30,10 @@ public class RabbitMQConfig {
     }
     @Bean
     public Binding declareBindingNewMovie() {
-        amqpAdmin.declareQueue(newMovieQueue());
         return BindingBuilder.bind(newMovieQueue()).to(appExchange()).with(TOPIC_NEW_MOVIE);
     }
     @Bean
     public Binding declareBindingNewSerie() {
-        amqpAdmin.declareQueue(newSerieQueue());
         return BindingBuilder.bind(newSerieQueue()).to(appExchange()).with(TOPIC_NEW_SERIES);
     }
     @Bean
