@@ -1,7 +1,9 @@
 package com.dh.apiserie.model;
 
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,6 +14,8 @@ import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 @Document(collection = "Series")
 public class Series implements Serializable {
     @Serial
@@ -25,6 +29,8 @@ public class Series implements Serializable {
 
     @AllArgsConstructor
     @NoArgsConstructor
+    @Getter
+    @Setter
     @Document
     public static class Season {
         @Id
@@ -35,6 +41,8 @@ public class Series implements Serializable {
 
     @AllArgsConstructor
     @NoArgsConstructor
+    @Getter
+    @Setter
     @Document
     public static class Chapter {
         @Id
