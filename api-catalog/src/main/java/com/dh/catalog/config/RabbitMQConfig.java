@@ -1,12 +1,10 @@
 package com.dh.catalog.config;
 
-import org.springframework.amqp.core.Binding;
-import org.springframework.amqp.core.BindingBuilder;
-import org.springframework.amqp.core.Queue;
-import org.springframework.amqp.core.TopicExchange;
+import org.springframework.amqp.core.*;
 import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -15,8 +13,10 @@ public class RabbitMQConfig {
     public static final String EXCHANGE_NAME = "digitalHouseExchange";
     public static final String QUEUE_MOVIE = "movieQueue";
     public static final String QUEUE_SERIES = "seriesQueue";
-    public static final String TOPIC_NEW_SERIES = "seriesNewQueue";
-    public static final String TOPIC_NEW_MOVIE = "movieNewQueue";
+    public static final String TOPIC_NEW_SERIES = "com.dh.newSeries";
+    public static final String TOPIC_NEW_MOVIE = "com.dh.newMovie";
+    @Autowired
+    private AmqpAdmin amqpAdmin;
 
     @Bean
     public TopicExchange appExchange() {
@@ -32,10 +32,12 @@ public class RabbitMQConfig {
     }
     @Bean
     public Binding declareBindingNewMovie() {
+        amqpAdmin.declareQueue(newMovieQueue());
         return BindingBuilder.bind(newMovieQueue()).to(appExchange()).with(TOPIC_NEW_MOVIE);
     }
     @Bean
     public Binding declareBindingNewSerie() {
+        amqpAdmin.declareQueue(newSerieQueue());
         return BindingBuilder.bind(newSerieQueue()).to(appExchange()).with(TOPIC_NEW_SERIES);
     }
     @Bean
